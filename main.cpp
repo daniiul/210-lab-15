@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 class Movie
@@ -9,19 +10,21 @@ class Movie
 private:
     string movieName;
     string screenWriter;
-    int year;
+    string year;
 
 public:
     void setmovieName(string n) { movieName = n;}
     string getmovieName() { return movieName;}
     void setscreenWriter(string w) { screenWriter = w;}
     string getscreenWriter() { return screenWriter;}
+    void setYear(string y) { year = y;}
+    string getYear() { return year; }
 
     void print() const
     {
-        cout << setw(W15) << "Movie: " << movieName << endl;
-        cout << setw(W15) << "Year: " << year << endl;
-        cout << setw(W15) << "Screen Writer: " << screenWriter << endl;
+        cout << setw(15) << "Movie: " << movieName << endl;
+        cout << setw(15) << "Year: " << year << endl;
+        cout << setw(15) << "Screen Writer: " << screenWriter << endl;
     }
 };
 
@@ -39,12 +42,22 @@ int main()
     }
 
     string temp;
-    int i = 0;
 
     while(getline(cin, temp))
     {
+        Movie a;
+        a.setmovieName(temp);
+        getline(cin, temp);
+        a.setYear(temp);
+        getline(cin, temp);
+        a.setscreenWriter(temp);
 
+        movies.push_back(a);
     }
 
+    for (auto i : movies)
+        i.print();
+
+    return 0;
 
 }
