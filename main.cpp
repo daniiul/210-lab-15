@@ -22,9 +22,10 @@ public:
 
     void print() const
     {
-        cout << setw(15) << "Movie: " << movieName << endl;
-        cout << setw(15) << "Year: " << year << endl;
-        cout << setw(15) << "Screen Writer: " << screenWriter << endl;
+        cout << right << setw(12) << "Movie: " << movieName << endl;
+        cout << right << setw(15) << "Year: " << year << endl;
+        cout << right << setw(24) << "Screen Writer: " << screenWriter << endl;
+        cout << endl;
     }
 };
 
