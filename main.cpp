@@ -43,13 +43,13 @@ int main()
 
     string temp;
 
-    while(getline(cin, temp))
+    while(getline(inputFile, temp))
     {
         Movie a;
         a.setmovieName(temp);
-        getline(cin, temp);
+        getline(inputFile, temp);
         a.setYear(temp);
-        getline(cin, temp);
+        getline(inputFile, temp);
         a.setscreenWriter(temp);
 
         movies.push_back(a);
