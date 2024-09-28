@@ -13,6 +13,7 @@ private:
     string year;
 
 public:
+    // get/setter functions for variables in private
     void setmovieName(string n) { movieName = n;}
     string getmovieName() { return movieName;}
     void setscreenWriter(string w) { screenWriter = w;}
@@ -20,6 +21,7 @@ public:
     void setYear(string y) { year = y;}
     string getYear() { return year; }
 
+    // prints all the variables of class using iomanipulators
     void print() const
     {
         cout << right << setw(12) << "Movie: " << movieName << endl;
@@ -44,6 +46,7 @@ int main()
 
     string temp;
 
+    // reads data from input file using getline statements
     while(getline(inputFile, temp))
     {
         Movie a;
@@ -53,9 +56,11 @@ int main()
         getline(inputFile, temp);
         a.setscreenWriter(temp);
 
+        //adds this movie to the vector array
         movies.push_back(a);
     }
 
+    // prints all the movies using print function from movie class
     for (auto i : movies)
         i.print();
 
